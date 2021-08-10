@@ -1,120 +1,113 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useState } from "react";
+
+import Intro from "../components/Intro/Intro";
+import Skills from "../components/Skills/Skills";
+import Projects from "../components/Projects/Project";
+import Contact from "../components/Contact/Contact";
 
 export default function Home() {
 
-  const kelvinTobar = {
-    name: 'Kelvin Tobar',
-    role: 'Full Stack Web Developer',
-    email: 'tobar411@gmail.com',
-    linkedin: 'linkedin.com/in/kelvin-tobar',
-    github: 'github.com/ktobar',
-    location: 'Toronto, ON',
-    skills: {
-      languages: ['Javascript','SQL','HTML','CSS','Ruby'],
-      libraries: ['NodeJS', 'ReactJS', 'Express', 'Rails', 'Ajax', 'JQuery', 'SASS' ],
-      frameworks: ['Bootstrap', 'Font Awesome'],
-      databases: ['PostgresSQL']
-    },
+  const [profile, setProfile] = useState({
+    name: "Kelvin Tobar",
+    summary: "As a skilled tradesman now turned Web Developer, I’ve always had a passion to build and improve things. From the first time I ran “Hello World” to creating my first full-stack application as a graduation project, I knew programming was for me. I enjoy the engaging challenge to continuously learn and improve skills to build high-quality software.",
+    role: "Web Developer",
+    email: "tobar411@gmail.com",
+    linkedin: "linkedin.com/in/kelvin-tobar",
+    github: "github.com/ktobar",
+    location: "Toronto, ON",
+    skills: [
+      {
+        title: 'Languages',
+        info: [
+          "Javascript", 
+          "SQL", 
+          "HTML", 
+          "CSS", 
+          "Ruby"
+        ]
+      },
+      {
+        title: 'Libraries',
+        info: [
+          "NodeJS",
+          "ReactJS",
+          "Express",
+          "Rails",
+          "Ajax",
+          "JQuery",
+          "SASS",
+        ]
+      },
+      {
+        title: 'Frameworks',
+        info: [
+          "Bootstrap", 
+          "Font Awesome"
+        ]
+      },
+      {
+        title: 'Databases',
+        info: [
+          "PostgresSQL"
+        ]
+      }
+    ],
     projects: [
       {
-        name: 'Echo',
-        gitRepo: 'https://github.com/ktobar/echo',
-        info: 'Video looping application that allows the user to save a list of multiple selected sections of a video, and saves it to user-created categories.',
-        stack: ['Axios', 'ReactJS', 'React Router', 'Express', 'Postgress', 'SASS', 'Bootstrap']
+        title: "Echo",
+        link: "https://github.com/ktobar/echo",
+        info: "Video looping application that allows the user to save a list of multiple selected sections of a video, and saves it to user-created categories.",
+        stack: [
+          "Axios",
+          "ReactJS",
+          "React Router",
+          "Express",
+          "Postgress",
+          "SASS",
+          "Bootstrap",
+        ],
       },
       {
-        name: 'Scheduler',
-        gitRepo: 'https://github.com/ktobar/scheduler',
-        info: 'Appointment booking application, that allows users to book, select who they\'re meeting with, and edit/delete a booking.',
-        stack: ['React', 'Axios', 'Classnames', 'Normalize', 'Storybook']
+        title: "Scheduler",
+        link: "https://github.com/ktobar/scheduler",
+        info: "Appointment booking application, that allows users to book, select who they're meeting with, and edit/delete a booking.",
+        stack: [
+          "React", 
+          "Axios", 
+          "Classnames", 
+          "Normalize", 
+          "Storybook"
+        ],
       },
       {
-        name: 'Tweeter',
-        gitRepo: 'https://github.com/ktobar/tweeter',
-        info: 'Application similar to Twitter, where users are able to submit a post that gets appended to a list of existing posts.',
-        stack: ['Express', 'jQuery',  'Node', 'PostgreSQL']
+        title: "Tweeter",
+        link: "https://github.com/ktobar/tweeter",
+        info: "Application similar to Twitter, where users are able to submit a post that gets appended to a list of existing posts.",
+        stack: [
+          "Express", 
+          "jQuery", 
+          "Node", 
+          "PostgreSQL"
+        ],
       },
       {
-        name: 'TinyApp',
-        gitRepo: 'https://github.com/ktobar/tinyapp',
-        info: 'Application that takes in a long URL and produce a short URL similar to bit.ly',
-        stack: ['Express', 'Node']
-      }
+        title: "TinyApp",
+        link: "https://github.com/ktobar/tinyapp",
+        info: "Application that takes in a long URL and produce a short URL similar to bit.ly",
+        stack: [
+          "Express",
+          "Node"
+        ],
+      },
     ]
-  };
+  });
 
   return (
     <div>
-      <div className='intro'>
-        <h1>Kelvin Tobar</h1>
-      </div>
-      <div className='skills'>
-        <h1>Skills</h1>
-        
-        <p>
-        LANGUAGES
-          Javascript
-          HTML
-          SQL
-          CSS
-          Ruby
-          Add Skill
-        LIBRARIES/FRAMEWORKS
-          NodeJS
-          ReactJS
-          Express
-          Rails
-          Ajax
-          Bootstrap
-          JQuery
-          SASS
-          Add Skill
-        DATABASES
-          PostgreSQL
-        </p>
-
-
-      </div>
-      <div className='projects'>
-        <h1>Project</h1>
-        <p>
-        Echo
-        https://github.com/ktobar/echo
-         
-         
-        Video looping application that allows the user to save a list of multiple selected sections of a video, and saves it to user-created categories. 
-        
-        Stack: Axios, ReactJS, React Router, Express, Postgress, SASS, Bootstrap
-        
-        Scheduler
-        https://github.com/ktobar/scheduler
-         
-         
-        Appointment booking application, that allows users to book, select who they're meeting with, and edit/delete a booking.
-        
-        Stack: React, Axios, Classnames, Normalize, Storybook
-        
-        Tweeter
-        https://github.com/ktobar/tweeter
-         
-
-        Application similar to Twitter, where users are able to submit a post that gets appended to a list of existing posts. 
-        
-        Stack: Express, jQuery,  Node, PostgreSQL
-        
-        TinyApp
-        https://github.com/ktobar/tinyapp
-         
-         
-        Application that takes in a long URL and produce a short URL similar to bit.ly
-        
-        Stack: Express, Node
-        
-        
-        </p>
-      </div>
+      <Intro name={profile.name} role={profile.role} summary={profile.summary} />
+      <Skills skills={profile.skills}/>
+      <Projects projects={profile.projects}/>
+      <Contact email={profile.email} linkedin={profile.linkedin}/>
     </div>
-  )
+  );
 }

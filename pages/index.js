@@ -9,9 +9,10 @@ export default function Home() {
 
   const [profile, setProfile] = useState({
     name: "Kelvin Tobar",
-    summary: "As a skilled tradesman now turned Web Developer, I’ve always had a passion to build and improve things. From the first time I ran “Hello World” to creating my first full-stack application as a graduation project, I knew programming was for me. I enjoy the engaging challenge to continuously learn and improve skills to build high-quality software.",
+    avatar: "https://avatars.githubusercontent.com/u/71950186?v=4",
+    summary: "Hello, I'm Toronto base Web developer, I’ve always had a passion to build and improve things. From the first time I ran “Hello World” to creating my first full-stack application as a graduation project, I knew programming was for me. I enjoy the engaging challenge to continuously learn and improve skills to build high-quality software.",
     role: "Web Developer",
-    email: "tobar411@gmail.com",
+    email: "hello@kelvintobar.com",
     linkedin: "linkedin.com/in/kelvin-tobar",
     github: "github.com/ktobar",
     location: "Toronto, ON",
@@ -104,7 +105,7 @@ export default function Home() {
 
   return (
     <div>
-      <Intro name={profile.name} role={profile.role} summary={profile.summary} />
+      <Intro name={profile.name} avatar={profile.avatar} role={profile.role} summary={profile.summary} />
       <Skills skills={profile.skills}/>
       <Projects projects={profile.projects}/>
       <Contact email={profile.email} linkedin={profile.linkedin}/>

@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { faReact, faJsSquare, faHtml5, faCss3} from '@fortawesome/free-brands-svg-icons'
+import {gem, farListAlt} from '@fortawesome/free-regular-svg-icons'
+
 import Intro from "../components/Intro/Intro";
 import Skills from "../components/Skills/Skills";
 import Projects from "../components/Projects/Project";
@@ -19,37 +22,78 @@ export default function Home() {
     skills: [
       {
         title: 'Languages',
-        info: [
-          "Javascript", 
-          "SQL", 
-          "HTML", 
-          "CSS", 
-          "Ruby"
+        info: [ {
+            name: "Javascript",
+            icon: faJsSquare
+          },
+          {
+            name: "HTML",
+            icon: faHtml5
+          },
+          {
+            name: "CSS", 
+            icon: faCss3
+          },
+          {
+            name: "SQL",
+            icon: farListAlt
+          },
+          {
+            name: "Ruby",
+            icon: gem
+          }
         ]
       },
       {
         title: 'Libraries',
-        info: [
-          "NodeJS",
-          "ReactJS",
-          "Express",
-          "Rails",
-          "Ajax",
-          "JQuery",
-          "SASS",
+        info: [{
+            name: "NodeJS", 
+            icon: ''
+          },
+          {
+            name: "ReactJS", 
+            icon: faReact
+          },
+          {
+            name: "Express", 
+            icon: ''
+          },
+          {
+            name: "Rails", 
+            icon: ''
+          },
+          {
+            name: "Ajax", 
+            icon: ''
+          },
+          {
+            name: "JQuery", 
+            icon: ''
+          },
+          {
+            name: "SASS", 
+            icon: ''
+          }
         ]
       },
       {
         title: 'Frameworks',
-        info: [
-          "Bootstrap", 
-          "Font Awesome"
+        info: [{
+            name: "Bootstrap", 
+            icon: ''
+          },
+          {
+            name: "Font Awesome", 
+            icon: ''
+          }
         ]
       },
       {
         title: 'Databases',
-        info: [
-          "PostgresSQL"
+        info: [{
+            name: "PostgresSQL", 
+            icon: ''
+          }           
         ]
       }
     ],

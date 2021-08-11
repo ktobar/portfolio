@@ -1,4 +1,5 @@
 import Table from "react-bootstrap/Table";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import styles from "../../styles/Skills.module.scss";
 
@@ -9,7 +10,8 @@ export default function Skills(props) {
 
   const skillList = (data) => {
     let list = data.map((item) => {
-      return <tr>{item}</tr>;
+      console.log("skillLisy=",item)
+      return <tr> <FontAwesomeIcon icon={item.icon}/> {item.name} </tr>;
     });
     return list;
   };
@@ -20,7 +22,11 @@ export default function Skills(props) {
         <Card.Body>
           <Card.Title>{data.title}</Card.Title>
           <Card.Text>
-            <Table>{skillList(data.info)}</Table>
+            <Table>
+              <tbody>
+                {skillList(data.info)}
+              </tbody>
+            </Table>
           </Card.Text>
         </Card.Body>
       </Card>

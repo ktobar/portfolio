@@ -10,8 +10,7 @@ export default function Skills(props) {
 
   const skillList = (data) => {
     let list = data.map((item) => {
-      console.log("skillLisy=",item)
-      return <tr> <FontAwesomeIcon icon={item.icon}/> {item.name} </tr>;
+      return <tr> <i class={item.icon}/> {item.name} </tr>;
     });
     return list;
   };

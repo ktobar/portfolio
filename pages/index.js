@@ -1,7 +1,5 @@
 import { useState } from "react";
-
-import { faReact, faJsSquare, faHtml5, faCss3} from '@fortawesome/free-brands-svg-icons'
-import {gem, farListAlt} from '@fortawesome/free-regular-svg-icons'
+import Head from 'next/head'
 
 import Intro from "../components/Intro/Intro";
 import Skills from "../components/Skills/Skills";
@@ -24,43 +22,44 @@ export default function Home() {
         title: 'Languages',
         info: [ {
             name: "Javascript",
-            icon: faJsSquare
+            icon: 'devicon-javascript-plain'
           },
           {
             name: "HTML",
-            icon: faHtml5
+            icon: 'devicon-html5-plain'
           },
           {
             name: "CSS", 
-            icon: faCss3
+            icon: 'devicon-css3-plain'
           },
           {
             name: "SQL",
-            icon: farListAlt
+            icon: 'devicon-mysql-plain'
           },
           {
             name: "Ruby",
-            icon: gem
+            icon: "devicon-ruby-plain"
           }
         ]
       },
       {
         title: 'Libraries',
         info: [{
-            name: "NodeJS", 
-            icon: ''
+          name: "ReactJS", 
+          icon: 'devicon-react-original'
           },
           {
-            name: "ReactJS", 
-            icon: faReact
+            name: "NodeJS", 
+            icon: 'devicon-nodejs-plain'
           },
+
           {
             name: "Express", 
-            icon: ''
+            icon: 'devicon-express-original'
           },
           {
             name: "Rails", 
-            icon: ''
+            icon: 'devicon-rails-plain'
           },
           {
             name: "Ajax", 
@@ -68,11 +67,11 @@ export default function Home() {
           },
           {
             name: "JQuery", 
-            icon: ''
+            icon: 'devicon-jquery-plain'
           },
           {
             name: "SASS", 
-            icon: ''
+            icon: 'devicon-sass-original'
           }
         ]
       },
@@ -80,7 +79,7 @@ export default function Home() {
         title: 'Frameworks',
         info: [{
             name: "Bootstrap", 
-            icon: ''
+            icon: 'devicon-bootstrap-plain'
           },
           {
             name: "Font Awesome", 
@@ -92,7 +91,7 @@ export default function Home() {
         title: 'Databases',
         info: [{
             name: "PostgresSQL", 
-            icon: ''
+            icon: 'devicon-postgresql-plain'
           }           
         ]
       }
@@ -103,11 +102,11 @@ export default function Home() {
         link: "https://github.com/ktobar/echo",
         info: "Video looping application that allows the user to save a list of multiple selected sections of a video, and saves it to user-created categories.",
         stack: [
-          "Axios",
           "ReactJS",
           "React Router",
           "Express",
           "Postgress",
+          "Axios",
           "SASS",
           "Bootstrap",
         ],
@@ -117,7 +116,7 @@ export default function Home() {
         link: "https://github.com/ktobar/scheduler",
         info: "Appointment booking application, that allows users to book, select who they're meeting with, and edit/delete a booking.",
         stack: [
-          "React", 
+          "ReactJS", 
           "Axios", 
           "Classnames", 
           "Normalize", 
@@ -149,6 +148,10 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css"/>
+      </Head>
+
       <Intro name={profile.name} avatar={profile.avatar} role={profile.role} summary={profile.summary} />
       <Skills skills={profile.skills}/>
       <Projects projects={profile.projects}/>

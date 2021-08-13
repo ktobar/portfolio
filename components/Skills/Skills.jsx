@@ -1,5 +1,4 @@
 import Table from "react-bootstrap/Table";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import styles from "../../styles/Skills.module.scss";
 
@@ -8,9 +7,27 @@ import Card from "react-bootstrap/Card";
 export default function Skills(props) {
   const { skills } = props;
 
+  const icon = (data) => {
+
+    const icon = data.icon
+
+    const isString = (icon) => {
+      return Object.prototype.toString.call(icon) === "[object String]";
+    };
+
+    return (isString(icon)) ? <i class={icon} /> : icon
+    
+  };
+
   const skillList = (data) => {
-    let list = data.map((item) => {
-      return <tr> <i class={item.icon}/> {item.name} </tr>;
+    const list = data.map((item) => {
+      return (
+        <tr>
+          {" "}
+            {icon(item)}{item.name}
+          {" "}
+        </tr>
+      );
     });
     return list;
   };
@@ -22,9 +39,7 @@ export default function Skills(props) {
           <Card.Title>{data.title}</Card.Title>
           <Card.Text>
             <Table>
-              <tbody>
-                {skillList(data.info)}
-              </tbody>
+              <tbody>{skillList(data.info)}</tbody>
             </Table>
           </Card.Text>
         </Card.Body>

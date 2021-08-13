@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Head from 'next/head'
 
+import { IoLogoJavascript } from "react-icons/io5";
+import { GoDatabase } from "react-icons/go";
+import { FaFontAwesome } from "react-icons/fa";
+
 import Intro from "../components/Intro/Intro";
 import Skills from "../components/Skills/Skills";
 import Projects from "../components/Projects/Project";
@@ -21,22 +25,27 @@ export default function Home() {
       {
         title: 'Languages',
         info: [ {
+            key: 1,
             name: "Javascript",
-            icon: 'devicon-javascript-plain'
+            icon: "devicon-javascript-plain"
           },
           {
+            key: 2,
             name: "HTML",
             icon: 'devicon-html5-plain'
           },
           {
+            key: 3,
             name: "CSS", 
             icon: 'devicon-css3-plain'
           },
           {
+            key: 3,
             name: "SQL",
-            icon: 'devicon-mysql-plain'
+            icon: <GoDatabase/>
           },
           {
+            key: 4,
             name: "Ruby",
             icon: "devicon-ruby-plain"
           }
@@ -45,31 +54,33 @@ export default function Home() {
       {
         title: 'Libraries',
         info: [{
+          key: 5,
           name: "ReactJS", 
           icon: 'devicon-react-original'
           },
           {
+            key: 6,
             name: "NodeJS", 
             icon: 'devicon-nodejs-plain'
           },
 
           {
+            key: 7,
             name: "Express", 
             icon: 'devicon-express-original'
           },
           {
+            key: 8,
             name: "Rails", 
             icon: 'devicon-rails-plain'
           },
           {
-            name: "Ajax", 
-            icon: ''
-          },
-          {
+            key: 10,
             name: "JQuery", 
             icon: 'devicon-jquery-plain'
           },
           {
+            key: 11,
             name: "SASS", 
             icon: 'devicon-sass-original'
           }
@@ -78,18 +89,22 @@ export default function Home() {
       {
         title: 'Frameworks',
         info: [{
+
+          key: 12,
             name: "Bootstrap", 
             icon: 'devicon-bootstrap-plain'
           },
           {
+            key: 13,
             name: "Font Awesome", 
-            icon: ''
+            icon: <FaFontAwesome/>
           }
         ]
       },
       {
         title: 'Databases',
         info: [{
+            key: 14,
             name: "PostgresSQL", 
             icon: 'devicon-postgresql-plain'
           }           
@@ -100,6 +115,7 @@ export default function Home() {
       {
         title: "Echo",
         link: "https://github.com/ktobar/echo",
+        image: ['https://github.com/nataliaCodes/echo/raw/master/screenshots/Echo-home.png', 'https://github.com/nataliaCodes/echo/raw/master/screenshots/Echo-moments.png', 'https://github.com/nataliaCodes/echo/raw/master/screenshots/Echo-videos.png', 'https://github.com/nataliaCodes/echo/raw/master/screenshots/Echo-categories.png', 'https://github.com/nataliaCodes/echo/raw/master/screenshots/Echo-login.png'],
         info: "Video looping application that allows the user to save a list of multiple selected sections of a video, and saves it to user-created categories.",
         stack: [
           "ReactJS",
@@ -114,6 +130,7 @@ export default function Home() {
       {
         title: "Scheduler",
         link: "https://github.com/ktobar/scheduler",
+        image: ['https://github.com/ktobar/scheduler/raw/master/docs/Empty%20slots.png?raw=true', 'https://github.com/ktobar/scheduler/raw/master/docs/Create%20form.png?raw=true', 'https://github.com/ktobar/scheduler/raw/master/docs/Show%20with%20edit%20and%20delete%20options.png?raw=true'],
         info: "Appointment booking application, that allows users to book, select who they're meeting with, and edit/delete a booking.",
         stack: [
           "ReactJS", 
@@ -126,6 +143,7 @@ export default function Home() {
       {
         title: "Tweeter",
         link: "https://github.com/ktobar/tweeter",
+        image: ['https://github.com/ktobar/tweeter/raw/master/doc/tweer-post.png', 'https://github.com/ktobar/tweeter/raw/master/doc/mobile-view.png'],
         info: "Application similar to Twitter, where users are able to submit a post that gets appended to a list of existing posts.",
         stack: [
           "Express", 
@@ -137,6 +155,7 @@ export default function Home() {
       {
         title: "TinyApp",
         link: "https://github.com/ktobar/tinyapp",
+        image: ['https://github.com/ktobar/tinyapp/raw/master/docs/url_page.png', 'https://github.com/ktobar/tinyapp/raw/master/docs/url_edit_page.png'],
         info: "Application that takes in a long URL and produce a short URL similar to bit.ly",
         stack: [
           "Express",

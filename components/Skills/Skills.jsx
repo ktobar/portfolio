@@ -1,32 +1,23 @@
-import Table from "react-bootstrap/Table";
-
-import styles from "../../styles/Skills.module.scss";
-
-import Card from "react-bootstrap/Card";
-
 export default function Skills(props) {
   const { skills } = props;
 
   const icon = (data) => {
-
-    const icon = data.icon
+    const icon = data.icon;
 
     const isString = (icon) => {
       return Object.prototype.toString.call(icon) === "[object String]";
     };
 
-    return (isString(icon)) ? <i class={icon} /> : icon
-    
+    return isString(icon) ? <i class={icon} /> : icon;
   };
 
   const skillList = (data) => {
     const list = data.map((item) => {
       return (
-        <tr>
-          {" "}
-            {icon(item)}{item.name}
-          {" "}
-        </tr>
+        <li>
+          {icon(item)}
+          {item.name}
+        </li>
       );
     });
     return list;
@@ -34,16 +25,17 @@ export default function Skills(props) {
 
   const card = (data) => {
     return (
-      <Card key={data.title} style={{ width: "18rem" }}>
-        <Card.Body>
-          <Card.Title>{data.title}</Card.Title>
-          <Card.Text>
-            <Table>
-              <tbody>{skillList(data.info)}</tbody>
-            </Table>
-          </Card.Text>
-        </Card.Body>
-      </Card>
+          
+            <div className="col-sm-12 col-md-6 col-lg-3">
+              <div className="card" key={data.title}>
+                <div className="card-body">
+                  <h5 className="card-title">{data.title}</h5>
+                  <p className="card-text">
+                    <ul>{skillList(data.info)}</ul>
+                  </p>
+                </div>
+              </div>
+            </div>
     );
   };
 
@@ -55,9 +47,14 @@ export default function Skills(props) {
   };
 
   return (
-    <div className={styles.skills}>
-      <h1>Skills</h1>
-      <div className={styles.cardList}>{cardList(skills)}</div>
+    <div className="skills">
+      
+      <div className="container">
+        <div className="row">
+        <h1>Skills</h1>
+        {cardList(skills)}
+        </div>
+      </div>
     </div>
   );
 }

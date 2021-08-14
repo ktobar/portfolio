@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Head from 'next/head'
 
-import { IoLogoJavascript } from "react-icons/io5";
 import { GoDatabase } from "react-icons/go";
 import { FaFontAwesome } from "react-icons/fa";
 

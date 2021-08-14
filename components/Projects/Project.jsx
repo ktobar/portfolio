@@ -1,5 +1,4 @@
 import styles from "../../styles/Project.module.scss";
-
 import Card from "react-bootstrap/Card";
 
 export default function Projects(props) {
@@ -10,6 +9,7 @@ export default function Projects(props) {
       <Card key={data.title} style={{ width: "18rem" }}>
         <Card.Body>
           <Card.Title>{data.title}</Card.Title>
+          <Card.Img className={styles.cardImg} src={data.image[0]}/>
           <Card.Text>{data.info}</Card.Text>
           <Card.Text>Stack: {data.stack}</Card.Text>
           <Card.Link href={data.link}>{data.link}</Card.Link>

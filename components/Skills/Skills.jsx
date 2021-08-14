@@ -51,7 +51,7 @@ export default function Skills(props) {
       
       <div className="container">
         <div className="row">
-        <h1 className="secondary">Skills</h1>
+        <h1 className="display-1">Skills</h1>
         {cardList(skills)}
         </div>
       </div>

@@ -10,7 +10,7 @@ export default function Intro(props) {
           <img src={avatar} className="img-fluid rounded-circle" />
         </div>
         <div class="col-md-9 col-sm-12">
-          <h1>{name}</h1>
+          <h1 className='display-1'>{name}</h1>
 
           <h2>{role}</h2>
           <h3>{summary}</h3>

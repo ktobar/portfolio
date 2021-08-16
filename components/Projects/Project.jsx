@@ -31,7 +31,7 @@ export default function Projects(props) {
     <div className="projects">
       <div className="container">
         <div className="row">
-          <h1 className="display-1">Projects</h1>
+          <h1 className="display-5">Projects</h1>
           {cardList(projects)}
         </div>
       </div>

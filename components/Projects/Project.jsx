@@ -6,15 +6,17 @@ export default function Projects(props) {
 
   const card = (data) => {
     return (
-      <Card key={data.title} style={{ width: "18rem" }}>
-        <Card.Body>
-          <Card.Title>{data.title}</Card.Title>
-          <Card.Img className={styles.cardImg} src={data.image[0]}/>
-          <Card.Text>{data.info}</Card.Text>
-          <Card.Text>Stack: {data.stack}</Card.Text>
-          <Card.Link href={data.link}>{data.link}</Card.Link>
-        </Card.Body>
-      </Card>
+      <div className="col-sm-12 col-md-6 col-lg-3">
+        <div className="card" key={data.title}>
+          <div className="card-body">
+            <h5 className="card-title">{data.title}</h5>
+            <img className={styles.img} src={data.image[0]} />
+            <p className="card-text">{data.info}</p>
+            <p className="card-text">Stack: {data.stack}</p>
+            <a href={data.link}>{data.link}</a>
+          </div>
+        </div>
+      </div>
     );
   };
 
@@ -26,9 +28,13 @@ export default function Projects(props) {
   };
 
   return (
-    <div className={styles.projects}>
-      <h1>Projects</h1>
-      <div className={styles.cardList}>{cardList(projects)}</div>
+    <div className="projects">
+      <div className="container">
+        <div className="row">
+          <h1 className="display-1">Projects</h1>
+          {cardList(projects)}
+        </div>
+      </div>
     </div>
   );
 }

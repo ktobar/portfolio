@@ -1,8 +1,7 @@
 // import Image from 'react-bootstrap/Image'
 
-export default function Intro(props) {
-  const { name, avatar, role, summary } = props;
-
+export default function Intro({ name, avatar, role, summary }) {
+  
   return (
     <div class="container intro mt-4">
       <div class="row">

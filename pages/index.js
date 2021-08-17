@@ -40,7 +40,7 @@ export default function Home() {
             icon: 'devicon-css3-plain'
           },
           {
-            key: 3,
+            key: 15,
             name: "SQL",
             icon: <GoDatabase/>
           },
@@ -96,7 +96,7 @@ export default function Home() {
           },
           {
             key: 13,
-            name: "Font Awesome", 
+            name: "FontAwesome", 
             icon: <FaFontAwesome/>
           }
         ]
@@ -119,9 +119,9 @@ export default function Home() {
         info: "Video looping application that allows the user to save a list of multiple selected sections of a video, and saves it to user-created categories.",
         stack: [
           "ReactJS",
-          "React Router",
+          "ReactRouter",
           "Express",
-          "Postgress",
+          "PostgresSQL",
           "Axios",
           "SASS",
           "Bootstrap",
@@ -148,8 +148,8 @@ export default function Home() {
         stack: [
           "Express", 
           "jQuery", 
-          "Node", 
-          "PostgreSQL"
+          "NodeJS", 
+          "PostgresSQL"
         ],
       },
       {
@@ -159,16 +159,11 @@ export default function Home() {
         info: "Application that takes in a long URL and produce a short URL similar to bit.ly",
         stack: [
           "Express",
-          "Node"
+          "NodeJS"
         ],
       },
-    ],
-    emailIcon: <HiOutlineMail/>,
-    linkedinIcon: <FaLinkedin/>
+    ]
   });
-
-  // const emailIcon = <IconNHiOutlineMailame/>
-  // const linkedinIcon = <FaLinkedin/>
 
   return (
     <div>
@@ -176,10 +171,22 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css"/>
       </Head>
 
-      <Intro name={profile.name} avatar={profile.avatar} role={profile.role} summary={profile.summary} />
-      <Skills skills={profile.skills}/>
-      <Projects projects={profile.projects}/>
-      <Contact email={profile.email} linkedin={profile.linkedin} emailIcon={profile.emailIcon} linkedinIcon={profile.linkedinIcon}/>
+      <Intro 
+        name={profile.name} 
+        avatar={profile.avatar} 
+        role={profile.role} 
+        summary={profile.summary} 
+      />
+      <Skills 
+        skills={profile.skills}
+      />
+      <Projects 
+        projects={profile.projects}
+      />
+      <Contact 
+        email={profile.email} 
+        linkedin={profile.linkedin}
+      />
     </div>
   );
 }

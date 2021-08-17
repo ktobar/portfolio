@@ -1,7 +1,8 @@
-export default function Skills(props) {
-  const { skills } = props;
+import Icon from "../comps/Icon";
 
-  const icon = (data) => {
+export default function Skills({ skills }) {
+  
+    const icon = (data) => {
     const icon = data.icon;
 
     const isString = (icon) => {
@@ -15,7 +16,7 @@ export default function Skills(props) {
     const list = data.map((item) => {
       return (
         <li>
-          {icon(item)}
+          <Icon name={item.name}/>
           {item.name}
         </li>
       );

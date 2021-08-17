@@ -1,8 +1,19 @@
-import styles from "../../styles/Project.module.scss";
-import Card from "react-bootstrap/Card";
+import Icon from "../comps/Icon";
 
-export default function Projects(props) {
-  const { projects } = props;
+import styles from "../../styles/Project.module.scss";
+
+export default function Projects({ projects }) {
+  const stackList = (data) => {
+    const list = data.map((item) => {
+      return (
+        <li>
+          <Icon name={item} /> {item}
+        </li>
+      );
+    });
+
+    return list;
+  };
 
   const card = (data) => {
     return (
@@ -12,7 +23,10 @@ export default function Projects(props) {
             <h5 className="card-title">{data.title}</h5>
             <img className={styles.img} src={data.image[0]} />
             <p className="card-text">{data.info}</p>
-            <p className="card-text">Stack: {data.stack}</p>
+            <p className="card-text">
+              Stack:
+              <ul>{stackList(data.stack)}</ul>
+            </p>
             <a href={data.link}>{data.link}</a>
           </div>
         </div>

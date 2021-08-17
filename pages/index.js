@@ -2,7 +2,8 @@ import { useState } from "react";
 import Head from 'next/head'
 
 import { GoDatabase } from "react-icons/go";
-import { FaFontAwesome } from "react-icons/fa";
+import { FaFontAwesome, FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 
 import Intro from "../components/Intro/Intro";
 import Skills from "../components/Skills/Skills";
@@ -161,8 +162,13 @@ export default function Home() {
           "Node"
         ],
       },
-    ]
+    ],
+    emailIcon: <HiOutlineMail/>,
+    linkedinIcon: <FaLinkedin/>
   });
+
+  // const emailIcon = <IconNHiOutlineMailame/>
+  // const linkedinIcon = <FaLinkedin/>
 
   return (
     <div>
@@ -173,7 +179,7 @@ export default function Home() {
       <Intro name={profile.name} avatar={profile.avatar} role={profile.role} summary={profile.summary} />
       <Skills skills={profile.skills}/>
       <Projects projects={profile.projects}/>
-      <Contact email={profile.email} linkedin={profile.linkedin}/>
+      <Contact email={profile.email} linkedin={profile.linkedin} emailIcon={profile.emailIcon} linkedinIcon={profile.linkedinIcon}/>
     </div>
   );
 }

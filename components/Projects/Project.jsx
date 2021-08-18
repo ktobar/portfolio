@@ -21,7 +21,7 @@ export default function Projects({ projects }) {
         <div className="card" key={data.title}>
           <div className="card-body">
             <h5 className="card-title">{data.title}</h5>
-            <img className={styles.img} src={data.image[0]} />
+            <img class = "img-fluid" className={styles.img} src={data.image[0]} />
             <p className="card-text">{data.info}</p>
             <p className="card-text">
               Stack:

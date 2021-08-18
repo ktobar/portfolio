@@ -8,7 +8,7 @@ import {
 import { HiOutlineMail } from "react-icons/hi";
 import { SiReactrouter, SiStorybook } from "react-icons/si";
 
-export default function Icon({ name }) {
+export default function Icon({ name, title }) {
   const iconList = {
     Bootstrap: <FaBootstrap />,
     CSS: "devicon-css3-plain",
@@ -31,7 +31,7 @@ export default function Icon({ name }) {
   };
 
   if (!iconList[name]) {
-    return <span><FaProjectDiagram /> {name} </span>;
+    return <span><FaProjectDiagram /> {(title) ? title : name} </span>;
   }
 
   const icon = (data) => {
@@ -41,7 +41,7 @@ export default function Icon({ name }) {
       return Object.prototype.toString.call(icon) === "[object String]";
     };
 
-    return isString(icon) ? <span><i class={icon} /> {data} </span> : <span> {icon}{data} </span>;
+    return isString(icon) ? <span><i class={icon} /> {(title) ? title : data}</span> : <span>{icon} {(title) ? title : data}</span>;
   };
 
   return icon(name);

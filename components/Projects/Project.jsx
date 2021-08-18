@@ -7,7 +7,7 @@ export default function Projects({ projects }) {
     const list = data.map((item) => {
       return (
         <li>
-          <Icon name={item} /> {item}
+          <Icon name={item} />
         </li>
       );
     });

@@ -1,31 +1,38 @@
 import { GoDatabase } from "react-icons/go";
-import { FaFontAwesome, FaLinkedin } from "react-icons/fa";
+import {
+  FaBootstrap,
+  FaFontAwesome,
+  FaLinkedin,
+  FaProjectDiagram,
+} from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { SiReactrouter, SiStorybook } from "react-icons/si";
 
 export default function Icon({ name }) {
   const iconList = {
-    Javascript: "devicon-javascript-plain",
-    HTML: "devicon-html5-plain",
+    Bootstrap: <FaBootstrap />,
     CSS: "devicon-css3-plain",
-    SQL: <GoDatabase />,
-    Ruby: "devicon-ruby-plain",
-    ReactJS: "devicon-react-original",
-    NodeJS: "devicon-nodejs-plain",
-    Express: "devicon-express-original",
-    Rails: "devicon-rails-plain",
-    JQuery: "devicon-jquery-plain",
-    SASS: "devicon-sass-original",
-    Bootstrap: "devicon-bootstrap-plain",
-    FontAwesome: <FaFontAwesome />,
-    PostgresSQL: "devicon-postgresql-plain",
     Email: <HiOutlineMail />,
-    Linkedin: <FaLinkedin />,
+    Express: "devicon-express-original",
+    FontAwesome: <FaFontAwesome />,
+    HTML: "devicon-html5-plain",
+    Javascript: "devicon-javascript-plain",
     jQuery: "devicon-jquery-plain",
+    Linkedin: <FaLinkedin />,
+    NodeJS: "devicon-nodejs-plain",
+    PostgresSQL: "devicon-postgresql-plain",
+    Rails: "devicon-rails-plain",
+    ReactJS: "devicon-react-original",
     ReactRouter: <SiReactrouter />,
+    Ruby: "devicon-ruby-plain",
+    SASS: "devicon-sass-original",
+    SQL: <GoDatabase />,
     Storybook: <SiStorybook />,
-
   };
+
+  if (!iconList[name]) {
+    return <span><FaProjectDiagram /> {name} </span>;
+  }
 
   const icon = (data) => {
     const icon = iconList[data];
@@ -34,12 +41,8 @@ export default function Icon({ name }) {
       return Object.prototype.toString.call(icon) === "[object String]";
     };
 
-    return isString(icon) ? <i class={icon} /> : icon;
+    return isString(icon) ? <span><i class={icon} /> {data} </span> : <span> {icon}{data} </span>;
   };
-
-  if (!iconList[name]) {
-    return null;
-  }
 
   return icon(name);
 }

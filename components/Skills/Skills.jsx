@@ -1,23 +1,11 @@
 import Icon from "../comps/Icon";
 
 export default function Skills({ skills }) {
-  
-    const icon = (data) => {
-    const icon = data.icon;
-
-    const isString = (icon) => {
-      return Object.prototype.toString.call(icon) === "[object String]";
-    };
-
-    return isString(icon) ? <i class={icon} /> : icon;
-  };
-
   const skillList = (data) => {
     const list = data.map((item) => {
       return (
         <li>
-          <Icon name={item.name}/>
-          {item.name}
+          <Icon name={item} aria-hidden="true" />
         </li>
       );
     });

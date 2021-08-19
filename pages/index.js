@@ -106,9 +106,15 @@ export default function Home() {
         role={profile.role}
         summary={profile.summary}
       />
-      <Skills skills={profile.skills} />
-      <Projects projects={profile.projects} />
-      <Contact email={profile.email} linkedin={profile.linkedin} />
+      <Skills 
+        skills={profile.skills} 
+      />
+      <Projects 
+        projects={profile.projects} 
+      />
+      <Contact 
+        email={profile.email} linkedin={profile.linkedin} 
+      />
     </div>
   );
 }

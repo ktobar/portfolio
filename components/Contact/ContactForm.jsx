@@ -1,6 +1,8 @@
+import styles from "./Contact.module.css"
+
 export default function ContactForm(props) {
   return (
-    <div class="contactForm">
+    <div className={`contactForm ${styles.contactForm}`}>
       <form
         class="row g-3"
         action="https://formsubmit.co/d3172cbee0111dc49f047658007b5453"

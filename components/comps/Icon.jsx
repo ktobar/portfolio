@@ -15,6 +15,7 @@ export default function Icon({ name, title }) {
     Email: <HiOutlineMail />,
     Express: "devicon-express-original",
     FontAwesome: <FaFontAwesome />,
+    Github: "devicon-github-original",
     HTML: "devicon-html5-plain",
     Javascript: "devicon-javascript-plain",
     jQuery: "devicon-jquery-plain",

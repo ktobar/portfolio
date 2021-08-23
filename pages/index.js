@@ -5,6 +5,7 @@ import Intro from "../components/Intro/Intro";
 import Skills from "../components/Skills/Skills";
 import Projects from "../components/Projects/Project";
 import Contact from "../components/Contact/Contact";
+import NavBar from "../components/comps/NavBar";
 
 export default function Home() {
   const [profile, setProfile] = useState({
@@ -106,6 +107,7 @@ export default function Home() {
         role={profile.role}
         summary={profile.summary}
       />
+      <NavBar/>
       <Skills 
         skills={profile.skills} 
       />

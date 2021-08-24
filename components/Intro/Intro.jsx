@@ -3,7 +3,7 @@ import styles from "./Intro.module.css";
 export default function Intro({ name, avatar, role, summary }) {
   return (
     <>
-      <div class="container-fluid mt-4 intro" className={styles.intro}>
+      <div className={`container-fluid mt-4 intro ${styles.intro}`}>
         <div class="row">
           <div class="col-md-3 col-sm-12">
             <img src={avatar} className="img-fluid rounded-circle avatar" />

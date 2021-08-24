@@ -6,6 +6,7 @@ import Skills from "../components/Skills/Skills";
 import Projects from "../components/Projects/Project";
 import Contact from "../components/Contact/Contact";
 import NavBar from "../components/comps/NavBar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [profile, setProfile] = useState({
@@ -117,6 +118,7 @@ export default function Home() {
       <Contact 
         email={profile.email} linkedin={profile.linkedin} 
       />
+      <Footer />
     </div>
   );
 }

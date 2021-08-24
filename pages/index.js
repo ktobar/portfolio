@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import Intro from "../components/Intro/Intro";
 import Skills from "../components/Skills/Skills";
-import Projects from "../components/Projects/Project";
+import Projects from "../components/Projects/Projects";
 import Contact from "../components/Contact/Contact";
 import NavBar from "../components/comps/NavBar";
 import Footer from "../components/Footer";

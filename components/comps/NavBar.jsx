@@ -3,7 +3,7 @@ import Icon from "./Icon";
 export default function NavBar(props) {
   return (
       <nav class="navbar sticky-top border-bottom shadow-sm bg-white">
-        <div class="container-fluid justify-content-start">
+        <div class="container justify-content-start">
           <div class="row align-items-start">
             <div class="col-md-12 pt-3">
               <ul class="list-inline">

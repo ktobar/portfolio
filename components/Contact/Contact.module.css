@@ -1,4 +1,7 @@
-.contactForm { 
+.contact {
   padding: 3rem;
 }
 
+.contactForm {
+  padding-top: 3rem;
+}

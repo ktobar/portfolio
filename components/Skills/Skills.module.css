@@ -1,4 +1,12 @@
- .skills {
+.skills {
   padding: 3rem;
+}
+.ul{
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1rem;
+}
+.cardList{
+  padding-top: 3rem;
 }
 
